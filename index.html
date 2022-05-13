@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IHD Blackjack</title>
+    <link href="IHDBJ.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>InHouse BJ</h1>
+      <p>Blackjack...<em>ya nasty</em>...Where anyone can win!</p>
+    </header>
+    <main>
+      <div class="dlr-plr">
+        <div class="dealer-div">
+          <h2>Dealer</h2>
+          <p id="dealer-crds"></p>
+          <p id="dealer-ttl">Dealer total: 0</p>
+        </div>
+        <div class="player-div">
+          <h2>Player</h2>
+          <p id="player-crds"></p>
+          <p id="player-ttl">Player total: 0</p>
+        </div>
+      </div>
+      <button id="start-btn" onclick="startBJ()">*Blob*/Start</button>
+      <p id="dealer">Dealer:</p>
+      <div class="btns">
+        <button onclick="hit()">Hit</button>
+        <button onclick="stay()">
+          <div class="stay-btn">
+            <p class="stay">Stay</p>
+            <p class="d-hit">(Dealer Hit)</p>
+          </div>
+        </button>
+        <button onclick="doubleDown()">Double</button>
+        <button onclick="split()">Split</button>
+      </div>
+    </main>      
+    <footer>
+      <p>IHD please gamble responsibly! If you or someone you know has a problem...call us, we got a problem too.</p>
+      <h3>Page under construction...Enjoy for now!</h3>
+      <p>Current Issues...</p>
+      <ul>
+        <li>Double/Split buttons don't work[5]</li>
+        <li>Dealer is still a little slow...he may mess up what he's saying[3]</li>
+        <li>*Blob*[this doesn't need fixing]</li>
+        <li>You have to hit for the dealer w/ Stay[4]</li>
+        <li>Cards go up to 14, sorry (11-A, 12-J, 13-Q, 14-K)[2]</li>
+        <li>Must refresh page to reset game[1]</li>
+      </ul>
+      <p><strong>Fixes coming</strong>, don't fret!</p>
+    </footer>
+    <script src="IHDBJ.js"></script>
+  </body>
+</html>

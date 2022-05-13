@@ -1,0 +1,145 @@
+* {
+  font-family: 'Shadows Into Light', 'Indie Flower', cursive;
+  margin: 0;
+  text-align: center;
+}
+
+body {
+  color: white;
+  font-size: 24px;
+  background-color: black;
+  padding: 4px;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 4.5rem;
+  padding: 8px;
+  border-bottom: dashed white 3px;
+  text-shadow: -3px 10px 10px rgba(255,255,255,0.29);
+}
+
+h2 {
+  margin: 4px 3rem 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding: 12px;
+  text-decoration: underline;
+  border: dotted black 2px;
+  border-radius: 100%;
+  box-shadow: -3px 10px 10px rgba(0,0,0,0.29), 5px -6px 8px rgba(0,0,0,0.37);
+}
+
+h3 {
+  margin: 8px;
+  font-size: 1.25rem;
+}
+
+p {
+  font-family: 'Indie Flower';
+  margin: 8px;
+  padding: 4px;
+  border-bottom: dashed black 1px;
+}
+
+button {
+  color: rgba(255,255,255,0.47);
+  font-size: 1.5rem;
+  background-color: rgba(56, 56, 56, 0.408);
+  border: none;
+  padding: 5px 12px;
+  margin: 4px;
+  transition: .23s;
+  cursor: crosshair;
+  text-shadow: -3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
+  box-shadow: inset -3px 10px 5px rgba(0,0,0,0.41);
+}
+
+button:hover {
+  background-color: transparent;
+  font-size: 1.75rem;
+}
+
+button:active {
+  background-image: none;
+  color: transparent;
+  border-radius: 100%;
+  font-size: 1.5rem;
+}
+
+footer {
+  background-color: white;
+  color: black;
+  font-size: .6rem;
+  margin: 40px 0 12px;
+  border-top: dashed black 1px;
+}
+
+footer:hover {
+  background-image: url("14.png");
+  background-size: cover;
+  background-position: center;
+  font-weight: 700;
+  cursor: none;
+}
+
+#start-btn {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+#start-btn:hover {
+  background-image: url("14.png");
+  background-size: cover;
+  background-position: center;
+  color: black;
+}
+
+.dlr-plr {
+  margin: 24px 0 12px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  text-shadow: -3px 10px 10px rgba(0,0,0,0.29), 5px -6px 8px rgba(0,0,0,0.37);
+}
+
+.dealer-div {
+  background-color: #319364;
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset -5px -6px 8px rgba(0,0,0,0.37),-3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
+}
+
+.player-div {
+  background-color: #7A2763;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 5px -6px 8px rgba(0,0,0,0.37),-3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
+}
+
+.stay-btn {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-hit {
+  margin: 0;
+  border: none;
+  font-size: .5rem;
+  font-weight: 700;
+}
+
+.stay {
+  margin: 0;
+  border: none;
+}
+
+.btns {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+}
