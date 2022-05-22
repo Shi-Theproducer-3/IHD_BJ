@@ -1,7 +1,9 @@
 * {
   font-family: 'Shadows Into Light', 'Indie Flower', cursive;
   margin: 0;
+  padding: 0;
   text-align: center;
+  letter-spacing: .33px;
 }
 
 body {
@@ -12,19 +14,19 @@ body {
 }
 
 h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   font-weight: 700;
-  font-size: 4.5rem;
+  font-size: 7rem;
   padding: 8px;
   border-bottom: dashed white 3px;
   text-shadow: -3px 10px 10px rgba(255,255,255,0.29);
 }
 
 h2 {
-  margin: 4px 3rem 1rem;
-  font-size: 2.5rem;
+  margin: 10px 6rem 1rem;
+  font-size: 4rem;
   font-weight: 500;
-  padding: 12px;
+  padding: 24px;
   text-decoration: underline;
   border: dotted black 2px;
   border-radius: 100%;
@@ -33,22 +35,25 @@ h2 {
 
 h3 {
   margin: 8px;
-  font-size: 1.25rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: underline #319364 2px;
 }
 
 p {
   font-family: 'Indie Flower';
-  margin: 8px;
-  padding: 4px;
+  margin: 10px 8px;
+  padding: 8px;
+  font-size: 1.5rem;
   border-bottom: dashed black 1px;
 }
 
 button {
   color: rgba(255,255,255,0.47);
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-color: rgba(56, 56, 56, 0.408);
   border: none;
-  padding: 5px 12px;
+  padding: 5px 2rem;
   margin: 4px;
   transition: .23s;
   cursor: crosshair;
@@ -58,7 +63,6 @@ button {
 
 button:hover {
   background-color: transparent;
-  font-size: 1.75rem;
 }
 
 button:active {
@@ -71,8 +75,7 @@ button:active {
 footer {
   background-color: white;
   color: black;
-  font-size: .6rem;
-  margin: 40px 0 12px;
+  margin: 6.5rem 0 12px;
   border-top: dashed black 1px;
 }
 
@@ -84,21 +87,46 @@ footer:hover {
   cursor: none;
 }
 
-#start-btn {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin: 24px 0;
+li {
+  font-style: italic;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  line-height: 40px;
+  padding: 6px;
+  margin: 12px 8px 6px;
 }
 
-#start-btn:hover {
-  background-image: url("14.png");
-  background-size: cover;
-  background-position: center;
-  color: black;
+li:hover {
+  background-color: rgba(122, 39, 99, 0.61);
+  color: white;
+}
+
+div img {
+  border-radius: 8px;
+  margin: 0 8px 0 8px;
+  height: 120px;
+  width: 75px;
+  box-shadow: 5px 6px 8px rgba(0,0,0,0.37), 8px -3px 10px rgba(255,255,255,0.29);
+}
+
+em {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+header p {
+  font-size: 2rem;
+}
+
+#start-btn {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
 }
 
 .dlr-plr {
-  margin: 24px 0 12px;
+  margin: 3rem 0 2rem;
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -118,28 +146,43 @@ footer:hover {
   box-shadow: inset 5px -6px 8px rgba(0,0,0,0.37),-3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
 }
 
-.stay-btn {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.d-hit {
-  margin: 0;
-  border: none;
-  font-size: .5rem;
-  font-weight: 700;
-}
-
-.stay {
-  margin: 0;
-  border: none;
-}
-
 .btns {
   display: flex;
   flex: 1;
   justify-content: space-evenly;
   align-items: center;
+}
+
+#hidden {
+  margin: 0 -5px 0 0;
+}
+
+#top-btns{
+  display: flex;
+  flex-direction: column;
+}
+
+#top-btns button {
+  flex: 1;
+  margin: 0 15rem 1rem;
+}
+
+#top-btns button:hover {
+  background-image: url("14.png");
+  background-size: cover;
+  background-position: center;
+  color: black;
+}
+
+#start {
+  font-size: 1.3rem;
+}
+
+#game-breakdown {
+  margin: 2rem 6.5rem 3rem;
+  padding: 24px;
+  background-color: #319364;
+  color: #7A2763;
+  letter-spacing: .5px;
+  box-shadow: inset 5px -6px 8px rgba(0,0,0,0.37), inset -3px 10px 10px rgba(0,0,0.29), inset 15px -6px 10px rgba(0, 0, 0, 0.37), inset 5px -6px 8px rgba(0,0,0,0.37), inset 3px -10px 10px rgba(0,0,0.29), inset -15px 6px 10px rgba(0, 0, 0, 0.37);
 }
