@@ -1,4 +1,4 @@
-* {
+*{
   font-family: 'Shadows Into Light', 'Indie Flower', cursive;
   margin: 0;
   padding: 0;
@@ -8,25 +8,24 @@
 
 body {
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   background-color: black;
   padding: 4px;
 }
 
 h1 {
-  margin-bottom: 3rem;
+  margin-bottom: rem;
   font-weight: 700;
-  font-size: 7rem;
-  padding: 8px;
+  font-size: 6.5rem;
+  padding: 4px 8px;
   border-bottom: dashed white 3px;
   text-shadow: -3px 10px 10px rgba(255,255,255,0.29);
 }
 
 h2 {
-  margin: 10px 6rem 1rem;
-  font-size: 4rem;
+  font-size: 3.75rem;
   font-weight: 500;
-  padding: 24px;
+  padding: 20px;
   text-decoration: underline;
   border: dotted black 2px;
   border-radius: 100%;
@@ -35,7 +34,7 @@ h2 {
 
 h3 {
   margin: 8px;
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-decoration: underline #319364 2px;
 }
@@ -46,6 +45,7 @@ p {
   padding: 8px;
   font-size: 1.5rem;
   border-bottom: dashed black 1px;
+  letter-spacing: 1.2px;
 }
 
 button {
@@ -53,8 +53,9 @@ button {
   font-size: 2rem;
   background-color: rgba(56, 56, 56, 0.408);
   border: none;
-  padding: 5px 2rem;
+  padding: 5px 1.5rem;
   margin: 4px;
+  flex: 1;
   transition: .23s;
   cursor: crosshair;
   text-shadow: -3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
@@ -122,20 +123,19 @@ header p {
 #start-btn {
   font-size: 2.5rem;
   font-weight: 700;
-  margin: 1.5rem 0;
+  margin: 1rem 0 12px;
 }
 
 .dlr-plr {
-  margin: 3rem 0 2rem;
+  margin: 1rem 24px 1rem;
   display: flex;
-  flex-direction: row;
-  flex: 1;
   justify-content: center;
   text-shadow: -3px 10px 10px rgba(0,0,0,0.29), 5px -6px 8px rgba(0,0,0,0.37);
 }
 
 .dealer-div {
   background-color: #319364;
+  flex: 1;
   border-radius: 4px 0 0 4px;
   box-shadow: inset -5px -6px 8px rgba(0,0,0,0.37),-3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
 }
@@ -143,18 +143,14 @@ header p {
 .player-div {
   background-color: #7A2763;
   border-radius: 0 4px 4px 0;
+  flex: 1;
   box-shadow: inset 5px -6px 8px rgba(0,0,0,0.37),-3px 10px 10px rgba(255,255,255,0.29), 5px -6px 8px rgba(255, 255, 255, 0.37);
 }
 
 .btns {
   display: flex;
-  flex: 1;
   justify-content: space-evenly;
   align-items: center;
-}
-
-#hidden {
-  margin: 0 -5px 0 0;
 }
 
 #top-btns{
@@ -163,8 +159,7 @@ header p {
 }
 
 #top-btns button {
-  flex: 1;
-  margin: 0 15rem 1rem;
+  margin: 12px 3.33rem 1rem;
 }
 
 #top-btns button:hover {
@@ -174,13 +169,17 @@ header p {
   color: black;
 }
 
+#hidden {
+  margin: 0 -5px 0 0;
+}
+
 #start {
   font-size: 1.3rem;
 }
 
 #game-breakdown {
-  margin: 2rem 6.5rem 3rem;
-  padding: 24px;
+  margin: 1.5rem 4rem 2rem;
+  padding: 20px;
   background-color: #319364;
   color: #7A2763;
   letter-spacing: .5px;
