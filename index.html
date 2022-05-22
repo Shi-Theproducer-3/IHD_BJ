@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>IHD Blackjack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="IHDBJ.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,32 +13,38 @@
     <header>
       <h1>InHouse BJ</h1>
       <p>Blackjack...<em>ya nasty</em>...Where anyone can win!</p>
+      <div id="game-breakdown">
+        <span>Playing the game is simple, click the <em>*Blob*(start)</em> button. It doubles as a reset button as well. Clicking the button will build a 6 deck shuffled shoe (a deck with 6 decks essentially, 312 cards total).
+          You and the dealer will be dealt two cards, one of the dealers cards will be hidden.
+          Click the <em>Hit</em> button if you have less than 17, the dealer has to hit until they have 17 (Also if you don't know the basics on when to hit/when not to hit in blackjack I would look at that).
+          Once you have a total you enjoy click the <em>Stay</em> button and the dealer will draw his cards if he needs some! The dealer total along with your total will also pop up.
+          Now you can do two things. 1. hit <em>New Hand</em> and continue your current game(shoe/deck). 2. hit the <em>*Blob*(start)</em> button again and reset the game.
+        </span>
+      </div>
     </header>
     <main>
       <div class="dlr-plr">
         <div class="dealer-div">
           <h2>Dealer</h2>
-          <p id="dealer-crds"></p>
-          <p id="dealer-ttl">Dealer total: 0</p>
+          <div id="dealer-crds"></div>
+          <p id="dealer-ttl">Dealer total:</p>
         </div>
         <div class="player-div">
           <h2>Player</h2>
-          <p id="player-crds"></p>
-          <p id="player-ttl">Player total: 0</p>
+          <div id="player-crds"></div>
+          <p id="player-ttl">Player total:</p>
         </div>
       </div>
-      <button id="start-btn" onclick="startBJ()">*Blob*/Start</button>
+      <div id="top-btns">
+        <button id="start-btn" type="button">*Blob*<span id="start">(start)</span></button>
+        <button id="new-hand" type="button">New Hand</button>
+      </div>
       <p id="dealer">Dealer:</p>
       <div class="btns">
-        <button onclick="hit()">Hit</button>
-        <button onclick="stay()">
-          <div class="stay-btn">
-            <p class="stay">Stay</p>
-            <p class="d-hit">(Dealer Hit)</p>
-          </div>
-        </button>
-        <button onclick="doubleDown()">Double</button>
-        <button onclick="split()">Split</button>
+        <button id="hit-btn" type="button">Hit</button>
+        <button id="stay-btn" type="button">Stay</button>
+        <button id="dbl-dwn-btn" type="button">Double</button>
+        <button id="split-btn" type="button">Split</button>
       </div>
     </main>      
     <footer>
@@ -45,13 +53,20 @@
       <p>Current Issues...</p>
       <ul>
         <li>Double/Split buttons don't work[5]</li>
-        <li>Dealer is still a little slow...he may mess up what he's saying[3]</li>
+        <li>Dealer is still a little slow...he may mess up what he's saying[3]-mostly resolved-let me know if you see anything</li>
         <li>*Blob*[this doesn't need fixing]</li>
-        <li>You have to hit for the dealer w/ Stay[4]</li>
-        <li>Cards go up to 14, sorry (11-A, 12-J, 13-Q, 14-K)[2]</li>
-        <li>Must refresh page to reset game[1]</li>
+        <li>You have to hit for the dealer w/ Stay[4]-resolved</li>
+        <li>Cards go up to 14, sorry (11-A, 12-J, 13-Q, 14-K)[2]-resolved</li>
+        <li>Must refresh page to reset game[1]-resolved</li>
       </ul>
       <p><strong>Fixes coming</strong>, don't fret!</p>
+      <h3>To Come!</h3>
+      <ul>
+        <li>Rotating dealer sayings so it's not the same old thing</li>
+        <li>Addition of saving your name</li>
+        <li>Betting, goes with the Double/Split problem</li>
+        <li>Rotating dealer names so you can talk ish to your favorite/least favorite dealers</li>
+      </ul>
     </footer>
     <script src="IHDBJ.js"></script>
   </body>
