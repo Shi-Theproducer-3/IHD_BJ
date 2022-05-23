@@ -18,7 +18,7 @@ let bDeck;
 
 let pCards;
 let pHit = true;
-let dHit = false;
+let dHit = true;
 
 let won = false;
 let push = false;
@@ -29,14 +29,6 @@ startGameBtn.addEventListener("click", function() {
   clearDealtCards();
   dealCards();
 
-  if (dSum === 21 && dAces === 1) {
-    stay();
-  };
-  if (pSum === 21 && pAces === 1 && dSum !== 21) {
-    words = "Black muhhh fu**in Jack, let's go!";
-    won = true;
-    dealer.textContent = "Dealer: " + words + " Just click New Hand";
-  };
 });
 
 function buildDeck() {
@@ -113,6 +105,18 @@ function dealCards() {
     pAces += checkForAce(pCards);
     document.querySelector("#player-crds").append(cImg);
   };
+
+  if (dSum === 21 && dAces === 1 && pSum < 21) {
+    words = "R.I.P. That's looking like an ace w/ a big card for me.";
+    dealer.textContent = "Dealer: " + words + " On to the next one!";
+    stay();
+  };
+  if (pSum === 21 && pAces === 1 && dSum < 21) {
+    stay();
+    words = "Black muhhh fu**in Jack, let's go!";
+    won = true;
+    dealer.textContent = "Dealer: " + words + " Just click New Hand!";
+  };
 };
 
 hitBtn.addEventListener("click", hit);
@@ -130,6 +134,10 @@ function hit() {
   pAces += checkForAce(pCards);
   document.querySelector("#player-crds").append(cImg);
 
+  if(pSum > 21) {
+    stay();
+  };
+
   if (reduceCountForAces(pSum, pAces) > 21 && reduceCountForAces(dSum, dAces) > 17) {
     pHit = false;
   };
@@ -138,70 +146,78 @@ function hit() {
 newHandBtn.addEventListener("click", newHand);
 
 function newHand() {
-  clearDealtCards();
+  if(pSum >= 21 || dSum >= 17) {
+    clearDealtCards();
 
-  dAces = 0;
-  dSum = 0;
-  pAces = 0;
-  pSum = 0;
-  dealerTotalTxt.textContent = "Dealer total:";
-  playerTotalText.textContent = "Player total:";
-  dealer.textContent = "Dealer:";
-  pHit = true;
-
-  dealCards();
+    dAces = 0;
+    dSum = 0;
+    pAces = 0;
+    pSum = 0;
+    dealerTotalTxt.textContent = "Dealer total:";
+    playerTotalText.textContent = "Player total:";
+    dealer.textContent = "Dealer:";
+    pHit = true;
+  
+    dealCards();
+  }
 };
 
 stayBtn.addEventListener("click", stay);
 
 function stay() {
   pHit = false;
-
-  while (dSum < 17 && pSum <= 21) {
-    dHit = true;
-    let cImg = document.createElement("img");
-    cImg.setAttribute("id", "dealt-cards");
-    let card = bDeck.shift();
-    cImg.src = "./cards/" + card + ".png";
-    dSum += findNum(card);
-    dAces += checkForAce(card);
-    document.querySelector("#dealer-crds").append(cImg);
-  };
-
-  if (reduceCountForAces(dSum,dAces) > 17) {
+  if (pSum === 21 && pAces === 1) {
     dHit = false;
-  };
-
-  const dealerSum = reduceCountForAces(dSum, dAces);
-  const playerSum = reduceCountForAces(pSum, pAces);
-
-  dealerTotalTxt.textContent += " " + dealerSum;
-  playerTotalText.textContent += " " + playerSum;
-
-  document.querySelector(".hidden").src = `./cards/${dHidden}.png`
-
-  if (pSum <= 21 && dSum <= 21 && pSum > dSum) {
-    words = "Pulled that one out, ehh?! *Blob*";
-    won = true;
-  } else if(pSum <= 21 && dSum > 21) {
-    words = "Dub...I knew you had it in you!";
-    won = true;
-  } else if (pSum < dSum && dSum <= 21 && pSum <= 21) {
-    words = "Better luck next time...*Blob*";
-  } else if (pSum === dSum && dSum >= 17 && dSum < 21) {
-    words = "That's looking like a push...better than an L!";
-    push = true;
-  } else if (pSum === 21 && dSum === 21) {
-    words = "Not the push on the 21...SHHEEESSHHH...that's unfortunate. *Blob*";
-    push = true;
-  } else if (pSum === 21 && dSum !== 21) {
-    words = "You love to see it! Winners galore";
-    gameWinner = true
+    document.querySelector(".hidden").src = `./cards/${dHidden}.png`
   } else {
-    words = "You got 'em next time!";
-  };
+    while (dSum < 17 && pSum <= 21) {
+      dHit = true;
+      let cImg = document.createElement("img");
+      cImg.setAttribute("id", "dealt-cards");
+      let card = bDeck.shift();
+      cImg.src = "./cards/" + card + ".png";
+      dSum += findNum(card);
+      dAces += checkForAce(card);
+      document.querySelector("#dealer-crds").append(cImg);
+      reduceCountForAces(dSum,dAces);
+    };
 
-  dealer.textContent = "Dealer: " + words;
+
+    if (reduceCountForAces(dSum,dAces) > 17) {
+      dHit = false;
+    };
+
+    const dealerSum = reduceCountForAces(dSum, dAces);
+    const playerSum = reduceCountForAces(pSum, pAces);
+
+    dealerTotalTxt.textContent += " " + dealerSum;
+    playerTotalText.textContent += " " + playerSum;
+
+    document.querySelector(".hidden").src = `./cards/${dHidden}.png`
+
+    if (pSum <= 21 && dSum <= 21 && pSum > dSum) {
+      words = "Pulled that one out, ehh?! *Blob*";
+      won = true;
+    } else if(pSum <= 21 && dSum > 21) {
+      words = "Dub...I knew you had it in you!";
+      won = true;
+    } else if (pSum < dSum && dSum <= 21 && pSum <= 21 && dAces === 0) {
+      words = "Better luck next time...*Blob*";
+    } else if (pSum === dSum && dSum >= 17 && dSum < 21) {
+      words = "That's looking like a push...better than an L!";
+      push = true;
+    } else if (pSum === 21 && dSum === 21) {
+      words = "Not the push on the 21...SHHEEESSHHH...that's unfortunate. *Blob*";
+      push = true;
+    } else if (pSum === 21 && dSum !== 21) {
+      words = "You love to see it! Winners galore";
+      gameWinner = true
+    } else {
+      words = "You got 'em next time!";
+    };
+
+    dealer.textContent = "Dealer: " + words;
+  }
 };
 
 function findNum(card) {
@@ -214,6 +230,7 @@ function findNum(card) {
     } else {
       return 10;
     };
+
   } 
   return parseInt(hNum); //if hNum is a number- return that number
 };
